@@ -36,12 +36,13 @@
             android:layout_height="62dp" />
 
         <Button
-            android:id="@+id/Boton1"
+            android:id="@+id/botonInicio"
             android:layout_width="266dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
             android:text="Iniciar Sesion"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <Space
@@ -49,11 +50,12 @@
             android:layout_height="36dp" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/botonRegistro"
             android:layout_width="266dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Registrarse"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
     </LinearLayout>
