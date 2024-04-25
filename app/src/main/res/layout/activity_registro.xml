@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/img">
+    android:background="@drawable/fondo_pantalla_carga">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:scrollbarSize="4dp"
-            android:src="@drawable/logo">
+            android:src="@drawable/logo_caja">
 
         </ImageView>
         <TextView
