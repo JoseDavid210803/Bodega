@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/main_page">
+
+
+    <fragment
+        android:id="@+id/main_page"
+        android:name="com.example.bodega.ui.main_page.MainPageFragment"
+        android:label="@string/menu_main_page"
+        tools:layout="@layout/fragment_main_page" />
+    <fragment
+        android:id="@+id/consultar_entradas"
+        android:name="com.example.bodega.ui.consultar_entradas.ConsultarEntradasFragment"
+        android:label="@string/menu_consultar_entradas"
+        tools:layout="@layout/fragment_consultar_entradas" />
+
+    <fragment
+        android:id="@+id/consultar_salidas"
+        android:name="com.example.bodega.ui.consultar_salidas.ConsultarSalidasFragment"
+        android:label="@string/menu_consultar_salidas"
+        tools:layout="@layout/fragment_consultar_salidas" />
+
+    <fragment
+        android:id="@+id/establecer_alerta"
+        android:name="com.example.bodega.ui.establecer_alerta.EstablecerAlertaFragment"
+        android:label="@string/menu_establecer_alerta"
+        tools:layout="@layout/fragment_establecer_alerta" />
+
+
+    <fragment
+        android:id="@+id/registrar_entradas"
+        android:name="com.example.bodega.ui.registrar_entradas.RegistrarEntradasFragment"
+        android:label="@string/menu_registrar_entradas"
+        tools:layout="@layout/fragment_registrar_entradas" />
+
+    <fragment
+        android:id="@+id/registrar_salidas"
+        android:name="com.example.bodega.ui.registrar_salidas.RegistrarSalidasFragment"
+        android:label="@string/menu_registrar_salidas"
+        tools:layout="@layout/fragment_registrar_salidas" />
+
+    <fragment
+        android:id="@+id/ver_clientes"
+        android:name="com.example.bodega.ui.ver_clientes.VerClientesFragment"
+        android:label="@string/menu_ver_clientes"
+        tools:layout="@layout/fragment_ver_clientes" />
+
+
+    <fragment
+        android:id="@+id/ver_informes"
+        android:name="com.example.bodega.ui.ver_informes.VerInformesFragment"
+        android:label="@string/menu_ver_infromes"
+        tools:layout="@layout/fragment_ver_informes" />
+
+    <fragment
+        android:id="@+id/ver_producto"
+        android:name="com.example.bodega.ui.ver_producto.VerProductoFragment"
+        android:label="@string/menu_ver_prducto"
+        tools:layout="@layout/fragment_ver_producto" />
+
+    <fragment
+        android:id="@+id/ver_proovedores"
+        android:name="com.example.bodega.ui.ver_proveedores.VerProveedoresFragment"
+        android:label="@string/menu_ver_proveedores"
+        tools:layout="@layout/fragment_ver_proveedores" />
+
+
+    <fragment
+        android:id="@+id/ver_stock"
+        android:name="com.example.bodega.ui.ver_stock.VerStockFragment"
+        android:label="@string/menu_ver_stock"
+        tools:layout="@layout/fragment_ver_stock" />
+
+    <fragment
+        android:id="@+id/ver_alerta"
+        android:name="com.example.bodega.ui.ver_alerta.VerAlertaFragment"
+        android:label="@string/menu_visualizar_alertas"
+        tools:layout="@layout/fragment_visualizar_alertas" />
+
+
+</navigation>

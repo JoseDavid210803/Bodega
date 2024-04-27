@@ -33,7 +33,7 @@ public class Login extends AppCompatActivity {
                 // Acciones a realizar cuando se haga clic en el botón
                 String correo_electronico = correo_electronico_input.getText().toString();
                 String contrasena = contrasena_input.getText().toString();
-                Intent intent = new Intent(Login.this, HomePage.class);
+                Intent intent = new Intent(Login.this, HomePage2.class);
                 Log.i("Login", "Correo electrónico: " + correo_electronico + ", Contraseña: " + contrasena);
 
 

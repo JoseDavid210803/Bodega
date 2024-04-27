@@ -1,0 +1,96 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/main_page"
+            android:icon="@drawable/home_icon"
+            android:title="Pagina de inicio">
+        </item>
+    </group>
+    <item
+        android:title="CONSULTAS">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/ver_stock"
+                    android:title="Ver stock"
+                    android:icon="@drawable/stock_icon" />
+                <item
+                    android:id="@+id/ver_producto"
+                    android:title="Ver producto"
+                    android:icon="@drawable/producto_icon" />
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:title="MOVIMIENTOS">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/registrar_entradas"
+                    android:title="Registrar entradas"
+                    android:icon="@drawable/icono_entrada" />
+                <item
+                    android:id="@+id/registrar_salidas"
+                    android:title="Registrar salidas"
+                    android:icon="@drawable/icono_salida" />
+                <item
+                    android:id="@+id/consultar_entradas"
+                    android:title="Consultar entradas"
+                    android:icon="@drawable/consulta_icon" />
+                <item
+                    android:id="@+id/consultar_salidas"
+                    android:title="Consultar_salidas"
+                    android:icon="@drawable/consulta_icon" />
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:title="ALERTAS">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/establecer_alerta"
+                    android:title="Establecer alerta"
+                    android:icon="@drawable/visualizaralertas_icon"/>
+                <item
+                    android:id="@+id/ver_alerta"
+                    android:title="Visualizar alertas"
+                    android:icon="@drawable/alerta_icon" />
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:title="INFORMES">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/ver_informes"
+                    android:title="Ver informes"
+                    android:icon="@drawable/informe_icon"/>
+            </group>
+
+        </menu>
+    </item>
+
+    <item
+        android:title="PROOVERDORES Y CLIENTES">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/ver_clientes"
+                    android:title="Ver clientes"
+                    android:icon="@drawable/cliente_icon"/>
+                <item
+                    android:id="@+id/ver_proovedores"
+                    android:title="Ver proveedores"
+                    android:icon="@drawable/proovedor_icon" />
+            </group>
+        </menu>
+    </item>
+
+</menu>
