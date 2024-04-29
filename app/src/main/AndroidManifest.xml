@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bodega"
         tools:targetApi="31"
-        android:name=".backend.metodos.MyApplication">
+        android:name="com.example.bodega.backend.metodos.MyApplication">
 
 
 

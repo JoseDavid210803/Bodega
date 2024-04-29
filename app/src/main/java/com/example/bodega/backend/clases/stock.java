@@ -14,7 +14,23 @@ public class stock {
             Cantidad=0;
         }
 
-        // Method to add products to the stock
+    public List<producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<producto> productos) {
+        this.productos = productos;
+    }
+
+    public int getCantidad() {
+        return Cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        Cantidad = cantidad;
+    }
+
+    // Method to add products to the stock
         public void addProducto(producto producto) {
             productos.add(producto);
             Cantidad++;
