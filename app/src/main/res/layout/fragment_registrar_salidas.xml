@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.registrar_salidas.RegistrarSalidasFragment">
+    tools:context=".frontend.app.drawer_menu.registrar_salidas.RegistrarSalidasFragment">
 
     <TextView
         android:id="@+id/text_registrar_salidas"

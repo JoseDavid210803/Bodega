@@ -9,7 +9,6 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
     <string name="menu_visualizar_alertas">Visualizar alertas</string>
     <string name="menu_ver_stock">Ver stock</string>
     <string name="menu_ver_proveedores">Ver proveedores</string>
@@ -22,7 +21,5 @@
     <string name="menu_consultar_entradas">Consultar entradas</string>
     <string name="menu_consultar_salidas">Consultar salidas</string>
     <string name="menu_main_page">Pagina principal</string>
-
-
 
 </resources>

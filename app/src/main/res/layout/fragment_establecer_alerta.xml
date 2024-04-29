@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.establecer_alerta.EstablecerAlertaFragment">
+    tools:context=".frontend.app.drawer_menu.establecer_alerta.EstablecerAlertaFragment">
 
     <TextView
         android:id="@+id/text_establecer_alerta"

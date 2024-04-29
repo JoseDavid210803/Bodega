@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.registrar_entradas.RegistrarEntradasFragment">
+    tools:context=".frontend.app.drawer_menu.registrar_entradas.RegistrarEntradasFragment">
 
     <TextView
         android:id="@+id/text_registrar_entradas"

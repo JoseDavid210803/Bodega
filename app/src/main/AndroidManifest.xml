@@ -11,9 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Bodega"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        android:name=".backend.metodos.MyApplication">
+
+
+
         <activity
-            android:name=".HomePage2"
+            android:name=".frontend.app.drawer_menu.HomePage2"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".frontend.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,17 +35,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Principal"
+            android:name=".frontend.acceso.Principal"
             android:exported="true"></activity>
         <activity
-            android:name=".Login"
+            android:name=".frontend.acceso.Login"
             android:exported="true"></activity>
         <activity
-            android:name=".Registro"
+            android:name=".frontend.acceso.Registro"
             android:exported="true"></activity>
-        <activity
-            android:name=".HomePage"
-            android:exported="false"></activity>
+
     </application>
+
 
 </manifest>

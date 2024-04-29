@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.consultar_salidas.ConsultarSalidasFragment">
+    tools:context=".frontend.app.drawer_menu.consultar_salidas.ConsultarSalidasFragment">
 
     <TextView
         android:id="@+id/text_consultar_salidas"

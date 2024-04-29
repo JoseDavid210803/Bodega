@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main_page.MainPageFragment">
+    tools:context=".frontend.app.drawer_menu.main_page.MainPageFragment">
 
     <TextView
         android:id="@+id/text_mainpage"
