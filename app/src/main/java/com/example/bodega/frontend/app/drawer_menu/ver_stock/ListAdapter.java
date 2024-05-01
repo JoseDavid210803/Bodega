@@ -1,5 +1,4 @@
-package com.example.bodega.frontend.metodos;
-import android.annotation.SuppressLint;
+package com.example.bodega.frontend.app.drawer_menu.ver_stock;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -13,16 +12,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bodega.R;
-import com.example.bodega.backend.clases.producto;
-import com.example.bodega.frontend.app.drawer_menu.ver_stock.VerStockFragment;
+import com.example.bodega.backend.clases.Producto;
 
 import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
-    private List<producto> mData;
+    private List<Producto> mData;
     private final LayoutInflater mInflater;
 
-    public ListAdapter(List<producto> itemList, Context context){
+    public ListAdapter(List<Producto> itemList, Context context){
         this.mInflater=LayoutInflater.from(context);
         this.mData=itemList;
     }
@@ -42,7 +40,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         holder.bindData(mData.get(position));
     }
 
-    public void setItems(List<producto> items){mData=items;}
+    public void setItems(List<Producto> items){mData=items;}
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         ImageView iconImage;
@@ -56,11 +54,25 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             precio=itemView.findViewById(R.id.precioTextView);
         }
 
-        void bindData(final producto item){
+        void bindData(final Producto item){
             iconImage.setColorFilter(Color.parseColor(item.getColor()), PorterDuff.Mode.SRC_IN);
-            name.setText(item.getNombre());
+            name.setText(truncateText(item.getNombre()));
             cantidad.setText(String.valueOf(item.getCantidad())); // Convertir a String antes de setText
             precio.setText("$" + item.getPrecio());
+        }
+
+        String truncateText(String s)
+        {
+            int max_tamanio=16;
+
+            if(s.length()>max_tamanio)
+            {
+                return s.substring(0, max_tamanio) + "...";
+            }
+            else {
+                return s;
+            }
+
         }
     }
 }

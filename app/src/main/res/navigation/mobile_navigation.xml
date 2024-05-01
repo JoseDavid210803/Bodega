@@ -56,10 +56,10 @@
         tools:layout="@layout/fragment_ver_informes" />
 
     <fragment
-        android:id="@+id/ver_producto"
-        android:name="com.example.bodega.frontend.app.drawer_menu.ver_producto.VerProductoFragment"
-        android:label="@string/menu_ver_prducto"
-        tools:layout="@layout/fragment_ver_producto" />
+        android:id="@+id/anadir_producto"
+        android:name="com.example.bodega.frontend.app.drawer_menu.anadir_producto.AnadirProductoFragment"
+        android:label="@string/menu_anadir_prducto"
+        tools:layout="@layout/fragment_anadir_producto" />
 
     <fragment
         android:id="@+id/ver_proovedores"

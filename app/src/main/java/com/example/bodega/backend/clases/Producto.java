@@ -1,6 +1,6 @@
 package com.example.bodega.backend.clases;
 
-public class producto {
+public class Producto {
 
     int id;
     String nombre;
@@ -9,18 +9,12 @@ public class producto {
 
     String color;
 
-    public  producto(int id, int cantidad, double precio, String nombre) {
+    public Producto(int id, int cantidad, double precio, String nombre) {
         this.id=id;
         this.cantidad=cantidad;
         this.nombre = nombre;
         this.precio = precio;
         this.color ="#775447";
-    }
-    public void mostrarDetalles() {
-        System.out.println("ID: " + id);
-        System.out.println("Cantidad: " + cantidad);
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Precio: $" + precio);
     }
 
     //getters
@@ -58,5 +52,10 @@ public class producto {
 
     public String getColor() {
         return color;
+    }
+
+    @Override
+    public String toString() {
+        return "ID: " + id + ", Nombre: " + nombre + ", Cantidad: " + cantidad + ", Precio: " + precio;
     }
 }

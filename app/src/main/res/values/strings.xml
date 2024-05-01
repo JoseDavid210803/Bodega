@@ -12,7 +12,7 @@
     <string name="menu_visualizar_alertas">Visualizar alertas</string>
     <string name="menu_ver_stock">Ver stock</string>
     <string name="menu_ver_proveedores">Ver proveedores</string>
-    <string name="menu_ver_prducto">Ver producto</string>
+    <string name="menu_anadir_prducto">Añadir producto</string>
     <string name="menu_ver_infromes">Ver informes</string>
     <string name="menu_ver_clientes">Ver clientes</string>
     <string name="menu_registrar_entradas">Registrar entradas</string>

@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".frontend.MainActivity"
+            android:name=".frontend.acceso.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,6 +43,7 @@
         <activity
             android:name=".frontend.acceso.Registro"
             android:exported="true"></activity>
+
 
     </application>
 

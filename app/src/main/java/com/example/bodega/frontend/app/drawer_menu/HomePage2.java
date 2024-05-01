@@ -1,5 +1,6 @@
 package com.example.bodega.frontend.app.drawer_menu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -33,7 +34,8 @@ public class HomePage2 extends AppCompatActivity {
         binding.appBarNavigatonDrawer.iconoFlotante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+
+                Snackbar.make(view, "Anadir Producto", Snackbar.LENGTH_LONG)
                         .setAction("Action", null)
                         .setAnchorView(R.id.icono_flotante).show();
             }
@@ -43,7 +45,7 @@ public class HomePage2 extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.ver_alerta, R.id.ver_stock, R.id.ver_proovedores,  R.id.ver_producto, R.id.ver_informes, R.id.ver_clientes,
+                R.id.ver_alerta, R.id.ver_stock, R.id.ver_proovedores,  R.id.anadir_producto, R.id.ver_informes, R.id.ver_clientes,
                 R.id.registrar_salidas, R.id.registrar_entradas, R.id.establecer_alerta,  R.id.consultar_salidas, R.id.consultar_entradas,
                 R.id.main_page
                 )

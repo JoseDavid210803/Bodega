@@ -17,8 +17,8 @@
                     android:title="Ver stock"
                     android:icon="@drawable/stock_icon" />
                 <item
-                    android:id="@+id/ver_producto"
-                    android:title="Ver producto"
+                    android:id="@+id/anadir_producto"
+                    android:title="Añadir producto"
                     android:icon="@drawable/producto_icon" />
             </group>
         </menu>
@@ -42,7 +42,7 @@
                     android:icon="@drawable/consulta_icon" />
                 <item
                     android:id="@+id/consultar_salidas"
-                    android:title="Consultar_salidas"
+                    android:title="Consultar salidas"
                     android:icon="@drawable/consulta_icon" />
             </group>
         </menu>

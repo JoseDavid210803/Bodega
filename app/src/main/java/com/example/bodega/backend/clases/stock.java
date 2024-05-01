@@ -5,21 +5,21 @@ import java.util.List;
 
 public class stock {
         // Private list to hold product objects
-        private List<producto> productos;
+        private List<Producto> Productos;
         private int Cantidad;
 
         // Constructor to initialize the product list
         public stock() {
-            productos = new ArrayList<>(); // Use an appropriate list implementation
+            Productos = new ArrayList<>(); // Use an appropriate list implementation
             Cantidad=0;
         }
 
-    public List<producto> getProductos() {
-        return productos;
+    public List<Producto> getProductos() {
+        return Productos;
     }
 
-    public void setProductos(List<producto> productos) {
-        this.productos = productos;
+    public void setProductos(List<Producto> Productos) {
+        this.Productos = Productos;
     }
 
     public int getCantidad() {
@@ -31,32 +31,66 @@ public class stock {
     }
 
     // Method to add products to the stock
-        public void addProducto(producto producto) {
-            productos.add(producto);
-            Cantidad++;
-        }
+    public void addProducto(Producto producto) {
+            Productos.add(producto);
+            Cantidad++;}
 
         // Method to remove products from the stock
-        public void removeProducto(producto producto) {
-            productos.remove(producto);
+    public void removeProducto(Producto producto) {
+            Productos.remove(producto);
             Cantidad--;
         }
 
         // Method to get all products in the stock
-        public List<producto> getAllProductos() {
-            return productos;
-        }
 
         // Method to get a specific product by ID
-        public producto getProductoById(int id) {
-            for (producto producto : productos) {
+        public Producto getProductoById(int id) {
+            for (Producto producto : Productos) {
                 if (producto.getId() == id) {
+
                     return producto;
                 }
             }
             return null; // Return null if not found
         }
+        public boolean emptyStock()
+        {
+            return Cantidad == 0;
+        }
 
-        // Other methods as needed (e.g., search, filter, update)
+    public boolean idDisponible(int id) {
+        for (Producto producto : Productos) {
+            if (producto.getId() == id) {
+                return false;
+            }
+
+        }
+        return true;
     }
+
+    public int obtenerIndiceporId(int id)
+    {
+        for (int i=0; i<Cantidad; i++)
+        {
+            if (Productos.get(i).getId()==id)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+    public boolean disminuirStockProducto(int cant, Producto p){
+        if (p.getCantidad() >= cant) {
+            p.setCantidad(p.getCantidad() - cant);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void aumentarStockProducto(int cant, int id){
+        Producto prod = Productos.get(obtenerIndiceporId(id));
+        prod.setCantidad(prod.getCantidad()+cant);
+        }
+        }
 

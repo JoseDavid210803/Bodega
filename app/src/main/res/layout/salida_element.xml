@@ -28,29 +28,36 @@
                 android:layout_centerVertical="true"
                 android:paddingLeft="14dp"
                 android:paddingRight="14dp"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:src="@drawable/icono_salida" />
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
                 android:layout_toEndOf="@id/iconImageView"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/nameTextView"
+                    android:id="@+id/id_salidaTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
-                    android:text="Pan blanco bimbo"
+                    android:text="Entrante N° ###"
                     android:maxLines="1"
                     android:ellipsize="end"
                     android:textColor="@color/black"
                     android:textSize="21sp"
                     android:textStyle="bold"/>
                 <TextView
-                    android:id="@+id/precioTextView"
+                    android:id="@+id/fechaTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30/02/2024"
+                    android:textSize="18sp"
+                    />
+                <TextView
+                    android:id="@+id/importeTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="$#####"
@@ -63,9 +70,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginEnd="4dp"
+                android:layout_marginEnd="10dp"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:orientation="vertical">
                 <TextView
                     android:layout_width="wrap_content"
@@ -73,11 +80,12 @@
                     android:text="Cant."
                     android:textSize="20sp"/>
                 <TextView
-                    android:id="@+id/cantidadTextView"
+                    android:id="@+id/cantidad_salidaTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="0dp"
-                    android:text="8"
+                    android:text="5000"
+                    android:maxLines="1"
                     android:textAlignment="center"
 
                     android:textSize="18sp" />

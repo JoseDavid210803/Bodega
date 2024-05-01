@@ -1,11 +1,10 @@
-package com.example.bodega.frontend;
+package com.example.bodega.frontend.acceso;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.bodega.R;
-import com.example.bodega.frontend.acceso.Principal;
 
 public class MainActivity extends AppCompatActivity {
 
