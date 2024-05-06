@@ -5,72 +5,73 @@
         <item
             android:id="@+id/main_page"
             android:icon="@drawable/home_icon"
-            android:title="Pagina de inicio">
+            android:title="@string/pagina_de_inicio">
         </item>
+        <item
+            android:id="@+id/anadir_producto"
+            android:title="@string/a_adir_nuevo_producto"
+            android:icon="@drawable/producto_icon" />
     </group>
     <item
-        android:title="CONSULTAS">
+        android:title="@string/consultas">
         <menu>
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/ver_stock"
-                    android:title="Ver stock"
+                    android:title="@string/ver_stock"
                     android:icon="@drawable/stock_icon" />
-                <item
-                    android:id="@+id/anadir_producto"
-                    android:title="Añadir producto"
-                    android:icon="@drawable/producto_icon" />
+
             </group>
         </menu>
     </item>
 
     <item
-        android:title="MOVIMIENTOS">
+        android:title="@string/movimientos">
         <menu>
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/registrar_entradas"
-                    android:title="Registrar entradas"
+                    android:title="@string/registrar_entradas"
                     android:icon="@drawable/icono_entrada" />
                 <item
                     android:id="@+id/registrar_salidas"
-                    android:title="Registrar salidas"
+                    android:title="@string/registrar_salidas"
                     android:icon="@drawable/icono_salida" />
                 <item
                     android:id="@+id/consultar_entradas"
-                    android:title="Consultar entradas"
+                    android:title="@string/consultar_entradas"
                     android:icon="@drawable/consulta_icon" />
                 <item
                     android:id="@+id/consultar_salidas"
-                    android:title="Consultar salidas"
+                    android:title="@string/consultar_salidas"
                     android:icon="@drawable/consulta_icon" />
             </group>
         </menu>
     </item>
 
     <item
-        android:title="ALERTAS">
+        android:title="@string/alertas">
         <menu>
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/establecer_alerta"
-                    android:title="Establecer alerta"
+                    android:title="@string/establecer_alerta"
                     android:icon="@drawable/visualizaralertas_icon"/>
                 <item
                     android:id="@+id/ver_alerta"
-                    android:title="Visualizar alertas"
+                    android:title="@string/visualizar_alertas"
                     android:icon="@drawable/alerta_icon" />
             </group>
         </menu>
     </item>
 
     <item
-        android:title="INFORMES">
+        android:title="@string/informes">
         <menu>
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/ver_informes"
-                    android:title="Ver informes"
+                    android:title="@string/ver_informes"
                     android:icon="@drawable/informe_icon"/>
             </group>
 
@@ -78,7 +79,7 @@
     </item>
 
     <item
-        android:title="PROOVERDORES Y CLIENTES">
+        android:title="@string/prooverdores_y_clientes">
         <menu>
             <group android:checkableBehavior="single">
                 <item
@@ -87,7 +88,7 @@
                     android:icon="@drawable/cliente_icon"/>
                 <item
                     android:id="@+id/ver_proovedores"
-                    android:title="Ver proveedores"
+                    android:title="@string/ver_proveedores"
                     android:icon="@drawable/proovedor_icon" />
             </group>
         </menu>

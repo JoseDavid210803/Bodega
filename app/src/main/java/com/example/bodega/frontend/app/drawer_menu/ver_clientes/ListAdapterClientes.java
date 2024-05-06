@@ -1,5 +1,7 @@
-package com.example.bodega.frontend.app.drawer_menu.consultar_entradas;
+package com.example.bodega.frontend.app.drawer_menu.ver_clientes;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,15 +12,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bodega.R;
-import com.example.bodega.backend.clases.ticket;
+import com.example.bodega.backend.clases.Producto;
+import com.example.bodega.backend.clases.persona;
 
 import java.util.List;
 
-public class ListAdapter_entradas extends RecyclerView.Adapter<ListAdapter_entradas.ViewHolder> {
-    private List<ticket> mData;
+public class ListAdapterClientes extends RecyclerView.Adapter<ListAdapterClientes.ViewHolder> {
+    private List<persona> mData;
     private final LayoutInflater mInflater;
 
-    public ListAdapter_entradas(List<ticket> itemList, Context context){
+    public ListAdapterClientes(List<persona> itemList, Context context){
         this.mInflater=LayoutInflater.from(context);
         this.mData=itemList;
     }
@@ -29,7 +32,7 @@ public class ListAdapter_entradas extends RecyclerView.Adapter<ListAdapter_entra
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
-        View view=mInflater.inflate(R.layout.entrada_element, parent, false);
+        View view=mInflater.inflate(R.layout.persona_element, parent, false);
         return new ViewHolder(view);
     }
 
@@ -38,27 +41,25 @@ public class ListAdapter_entradas extends RecyclerView.Adapter<ListAdapter_entra
         holder.bindData(mData.get(position));
     }
 
-    public void setItems(List<ticket> items){mData=items;}
+    public void setItems(List<persona> items){mData=items;}
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        ImageView iconImage;
-        TextView name, cantidad, importe, fecha;
+        TextView name, correo, telefono, tipo;
 
         ViewHolder(View itemView){
             super(itemView);
 
-            name=itemView.findViewById(R.id.id_entranteTextView);
-            cantidad=itemView.findViewById(R.id.cantidad_entranteTextView);
-            importe=itemView.findViewById(R.id.importeTextView);
-            fecha=itemView.findViewById(R.id.fechaTextView);
-
+            name=itemView.findViewById(R.id.nombreTextView);;
+            correo=itemView.findViewById(R.id.correoTextView);
+            telefono=itemView.findViewById(R.id.telefonoTextView);
+            tipo=itemView.findViewById(R.id.tipoTextView);
         }
 
-        void bindData(final ticket item){
-            name.setText(truncateText("Entrante N°" + item.getId()));
-            cantidad.setText(String.valueOf(item.getNum_productos()));
-            importe.setText("$" + item.getImporte());
-            fecha.setText(item.getFecha());
+        void bindData(final persona item){
+            name.setText(truncateText(item.getNombre()));
+            correo.setText((item.getCorreo_electronico()));
+            telefono.setText((item.getNumero_telefono()));
+            tipo.setText("Cliente");
         }
 
         String truncateText(String s)

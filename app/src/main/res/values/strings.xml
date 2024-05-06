@@ -21,5 +21,24 @@
     <string name="menu_consultar_entradas">Consultar entradas</string>
     <string name="menu_consultar_salidas">Consultar salidas</string>
     <string name="menu_main_page">Pagina principal</string>
+    <string name="pagina_de_inicio">Pagina de inicio</string>
+    <string name="ver_stock">Ver stock</string>
+    <string name="a_adir_nuevo_producto">Añadir nuevo producto</string>
+    <string name="movimientos">MOVIMIENTOS</string>
+    <string name="registrar_entradas">Registrar entradas</string>
+    <string name="registrar_salidas">Registrar salidas</string>
+    <string name="consultar_entradas">Consultar entradas</string>
+    <string name="consultar_salidas">Consultar salidas</string>
+    <string name="alertas">ALERTAS</string>
+    <string name="establecer_alerta">Establecer alerta</string>
+    <string name="visualizar_alertas">Visualizar alertas</string>
+    <string name="informes">INFORMES</string>
+    <string name="ver_informes">Ver informes</string>
+    <string name="prooverdores_y_clientes">PROOVERDORES Y CLIENTES</string>
+    <string name="ver_proveedores">Ver proveedores</string>
+    <string name="consultas">CONSULTAS</string>
+    <string name="telefono">1234567890</string>
+    <string name="correo_electronico">Ejemplo@hotmail.com</string>
+    <string name="tipoPersona">Ejemplo</string>
 
 </resources>

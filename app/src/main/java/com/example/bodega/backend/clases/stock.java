@@ -88,9 +88,10 @@ public class stock {
         }
     }
 
-    public void aumentarStockProducto(int cant, int id){
-        Producto prod = Productos.get(obtenerIndiceporId(id));
-        prod.setCantidad(prod.getCantidad()+cant);
+    public void aumentarStockProducto(int cant, Producto p){
+        p.setCantidad(p.getCantidad()+cant);
         }
-        }
+
+
+}
 

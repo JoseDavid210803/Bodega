@@ -1,6 +1,7 @@
 package com.example.bodega.frontend.app.drawer_menu.ver_stock;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,8 @@ import com.example.bodega.backend.clases.Producto;
 
 import com.example.bodega.backend.metodos.MyApplication;
 import com.example.bodega.databinding.FragmentVerStockBinding;
+import com.example.bodega.frontend.acceso.MainActivity;
+import com.example.bodega.frontend.acceso.Principal;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,37 +38,28 @@ public class VerStockFragment extends Fragment implements SearchView.OnQueryText
         MyApplication myApp = (MyApplication) requireContext().getApplicationContext();
         elements = myApp.getInventario().getProductos();
 
-        //busqueda = rootView.findViewById(R.id.search_view);
-
-        /*
-        busqueda.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                realizar_busqueda(query);
-
-                return true;
-            }
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                realizar_busqueda(newText);
-                return true;
-            }
-        });*/
         init();
         return rootView;
     }
 
     public void init() {
 
-        Context context = requireContext();
-        ListAdapter listAdapter = new ListAdapter(elements, context);
-        RecyclerView recyclerView = rootView.findViewById(R.id.stock_recyclerview);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(context));
-        recyclerView.setAdapter(listAdapter);
+        Thread thread = new Thread()
+        {
+            @Override
+            public void run()
+            {
+                Context context = requireContext();
+                ListAdapter listAdapter = new ListAdapter(elements, context);
+                RecyclerView recyclerView = rootView.findViewById(R.id.stock_recyclerview);
+                recyclerView.setHasFixedSize(true);
+                recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                recyclerView.setAdapter(listAdapter);
 
-        listAdapter.setItems(elements);
+                listAdapter.setItems(elements);
+            }
+        };
+        thread.start();
 
     }
 
