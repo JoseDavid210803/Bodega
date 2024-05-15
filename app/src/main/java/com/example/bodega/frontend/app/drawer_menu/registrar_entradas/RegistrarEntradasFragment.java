@@ -1,6 +1,5 @@
 package com.example.bodega.frontend.app.drawer_menu.registrar_entradas;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -20,7 +19,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bodega.R;
-import com.example.bodega.backend.clases.Fecha;
 import com.example.bodega.backend.clases.Producto;
 import com.example.bodega.backend.clases.pair;
 import com.example.bodega.backend.clases.persona;
@@ -113,6 +111,7 @@ public class RegistrarEntradasFragment extends Fragment {
                         openNumberInputDialog(requireContext());;
                         init(productos_anadir);
                         Toast.makeText(requireContext(), "Producto añadido", Toast.LENGTH_SHORT).show();
+
                     }
                 }
 
@@ -133,7 +132,10 @@ public class RegistrarEntradasFragment extends Fragment {
                 for (pair <Producto, Integer> p : productos_anadir) {
                     ticket.addProducto(p.getFirst(), p.getSecond(), s);;
                 }
-                MyApp.getTicketsEntrada().agregarTicket(ticket);;
+                MyApp.getTicketsEntrada().agregarTicket(ticket);
+                Toast.makeText(requireContext(), "Entrada registrada", Toast.LENGTH_SHORT).show();
+                productos_anadir.clear();
+                init(productos_anadir);
                 }
         });
         return root;

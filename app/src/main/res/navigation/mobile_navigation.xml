@@ -24,10 +24,10 @@
         tools:layout="@layout/fragment_consultar_salidas" />
 
     <fragment
-        android:id="@+id/establecer_alerta"
-        android:name="com.example.bodega.frontend.app.drawer_menu.establecer_alerta.EstablecerAlertaFragment"
-        android:label="@string/menu_establecer_alerta"
-        tools:layout="@layout/fragment_establecer_alerta" />
+        android:id="@+id/anadir_cliente"
+        android:name="com.example.bodega.frontend.app.drawer_menu.registrar_cliente.RegistrarClienteFragment"
+        android:label="Añadir Cliente"
+        tools:layout="@layout/fragment_registrar_cliente" />
 
 
     <fragment
@@ -75,10 +75,10 @@
         tools:layout="@layout/fragment_ver_stock" />
 
     <fragment
-        android:id="@+id/ver_alerta"
-        android:name="com.example.bodega.frontend.app.drawer_menu.ver_alerta.VerAlertaFragment"
-        android:label="@string/menu_visualizar_alertas"
-        tools:layout="@layout/fragment_visualizar_alertas" />
+        android:id="@+id/anadir_proveedor"
+        android:name="com.example.bodega.frontend.app.drawer_menu.registrar_proveedor.RegistrarProveedorFragment"
+        android:label="Añadir Proveedor"
+        tools:layout="@layout/fragment_registrar_proveedor" />
 
 
 </navigation>

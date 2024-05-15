@@ -40,5 +40,6 @@
     <string name="telefono">1234567890</string>
     <string name="correo_electronico">Ejemplo@hotmail.com</string>
     <string name="tipoPersona">Ejemplo</string>
+    <string name="registrar_cliente">Registrar cliente</string>
 
 </resources>

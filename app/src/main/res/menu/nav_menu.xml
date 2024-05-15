@@ -49,39 +49,20 @@
         </menu>
     </item>
 
-    <item
-        android:title="@string/alertas">
-        <menu>
-            <group android:checkableBehavior="single">
-                <item
-                    android:id="@+id/establecer_alerta"
-                    android:title="@string/establecer_alerta"
-                    android:icon="@drawable/visualizaralertas_icon"/>
-                <item
-                    android:id="@+id/ver_alerta"
-                    android:title="@string/visualizar_alertas"
-                    android:icon="@drawable/alerta_icon" />
-            </group>
-        </menu>
-    </item>
 
-    <item
-        android:title="@string/informes">
-        <menu>
-            <group android:checkableBehavior="single">
-                <item
-                    android:id="@+id/ver_informes"
-                    android:title="@string/ver_informes"
-                    android:icon="@drawable/informe_icon"/>
-            </group>
-
-        </menu>
-    </item>
 
     <item
         android:title="@string/prooverdores_y_clientes">
         <menu>
             <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/anadir_cliente"
+                    android:title="@string/registrar_cliente"
+                    android:icon="@drawable/visualizaralertas_icon"/>
+                <item
+                    android:id="@+id/anadir_proveedor"
+                    android:title="Registrar Proovedor"
+                    android:icon="@drawable/alerta_icon" />
                 <item
                     android:id="@+id/ver_clientes"
                     android:title="Ver clientes"

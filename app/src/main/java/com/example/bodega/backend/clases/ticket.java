@@ -15,17 +15,14 @@ public class ticket {
     private Date fecha;
     private double importe;
     private int id;
-    private int num_productos;
     private ArrayList<String> meses = new ArrayList<>();
 
 
-    //proveedor
 
     public ticket(Date fecha) {
         productos = new ArrayList<>(); // Use an appropriate list implementation
         this.fecha =  fecha;
         this.importe = 0;
-        this.num_productos=0;
         meses.add("Enero");
         meses.add("Febrero");
         meses.add("Marzo");
@@ -41,31 +38,51 @@ public class ticket {
     }
 
     public void addProducto(Producto producto, int cantidad, stock s) {
-
-        s.aumentarStockProducto(cantidad, producto);
+        if(s.getProductos().contains(producto))
+        {
+            s.aumentarStockProducto(cantidad, producto);
+        }
+        else{
+            s.addProducto(producto);
+        }
         this.productos.add(new pair<>(producto, cantidad));
         actualizarImporte(producto.getPrecio(), cantidad);
-        actualizarNumProductos(cantidad);
     }
 
-    public boolean disminuirStockProducto(Producto producto, int cantidad, stock s) {
-        if (s.disminuirStockProducto(cantidad, producto)) {
-            this.productos.add(new pair<>(producto, cantidad));
-            actualizarImporte(producto.getPrecio(), cantidad);
-            actualizarNumProductos(cantidad);
+    public boolean disminuirStockProducto(Producto p, int cant, stock s) {
+        if (s.stockSuficiente(cant, p)) {
+            p.setCantidad(p.getCantidad() - cant);
+            this.productos.add(new pair<>(p, cant));
+            actualizarImporte(p.getPrecio(), cant);
             return true;
         }
         return false;
     }
-
-    public persona getOrigen() {
+    public persona getOrigen() {return persona;}
+    public void setPersona(persona persona) {this.persona = persona;}
+    public void setId(int id) {
+        this.id = id;
+    }
+    public void actualizarImporte(double p, int cant) {
+        if (p <= 0) {
+            return;
+        }
+        importe += p * cant;
+    }
+    public List<pair<Producto, Integer>> getProductos() {
+        return productos;
+    }
+    public com.example.bodega.backend.clases.persona getPersona() {
         return persona;
     }
-
-    public void setPersona(persona persona) {
-        this.persona = persona;
+    public String getFecha() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(fecha);
+        return (calendar.get(Calendar.DAY_OF_MONTH) + " " + meses.get(calendar.get(Calendar.MONTH)) + " " + calendar.get(Calendar.YEAR));
     }
-
+    public double getImporte() {return importe;}
+    public int getId() {return id;}
+    public int getNum_productos() {return productos.size();}
     public void mostrar() {
         Log.d("Ticket", "---- Ticket " + id + "----");
         Log.d("Ticket", "Fecha: " + fecha.toString());
@@ -75,51 +92,5 @@ public class ticket {
             Log.d("Ticket", "   - " + par.getFirst() + " | Cantidad: " + par.getSecond());
         }
         Log.d("Ticket", "---- Fin del Ticket ----");
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void actualizarImporte(double p, int cant) {
-        if (p <= 0) {
-            return;
-        }
-
-        importe += p * cant;
-    }
-    public void actualizarNumProductos(int cant)
-    {
-        num_productos+=cant;
-    }
-
-    public List<pair<Producto, Integer>> getProductos() {
-        return productos;
-    }
-
-    public com.example.bodega.backend.clases.persona getPersona() {
-        return persona;
-    }
-
-    public String getFecha() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(fecha);
-
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH) ; // Los meses en Calendar van de 0 a 11
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
-        return (day + " " + meses.get(month) + " " + year);
-    }
-
-    public double getImporte() {
-        return importe;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public int getNum_productos() {
-        return num_productos;
     }
 }

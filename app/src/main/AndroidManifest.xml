@@ -43,6 +43,9 @@
         <activity
             android:name=".frontend.acceso.Registro"
             android:exported="true"></activity>
+        <activity
+            android:name=".frontend.detalles.producto.detallesProducto"
+            android:exported="true"></activity>
 
 
     </application>

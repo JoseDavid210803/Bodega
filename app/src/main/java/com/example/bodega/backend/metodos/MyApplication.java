@@ -3,7 +3,6 @@ package com.example.bodega.backend.metodos;
 import android.app.Application;
 import android.util.Log;
 
-import com.example.bodega.backend.clases.Fecha;
 import com.example.bodega.backend.clases.Producto;
 import com.example.bodega.backend.clases.catalogoPersonas;
 
@@ -35,7 +34,6 @@ public class MyApplication extends Application {
             inventario.addProducto( new Producto(i+1, 10, 10.0+i, "Producto " + (i + 1)));
             catalogoProveedores.anadirPersona(new persona("Proveedor " + (i + 1), "3312345678", "correoProveedor" + (i +1) +"@hotmail.com"));
             catalogoClientes.anadirPersona(new persona("Cliente " + (i + 1), "3312345678", "correoCliente" + (i +1) +"@hotmail.com"));
-
         }
         //ticket 1
         ticket ticket_entrada1=new ticket(new Date());
@@ -127,8 +125,6 @@ public class MyApplication extends Application {
         {
             ticket.mostrar();
         }
-
-
         Log.d("Ticket", "");
         Log.d("Ticket", "Tickets salida");
         Log.d("Ticket", "");
@@ -142,26 +138,12 @@ public class MyApplication extends Application {
     public stock getInventario() {
         return inventario;
     }
-
-    public catalogoPersonas getCatalogoProveedores() {
-        return catalogoProveedores;
-    }
-
     public listaTickets getTicketsEntrada() {
         return ticketsEntrada;
     }
-
-    public catalogoPersonas getCatalogoClientes() {
-        return catalogoClientes;
-    }
-
     public listaTickets getTicketsSalida() {
         return ticketsSalida;
     }
-
-    public List<persona> getClientes() { return catalogoClientes.getPersonas();
-    }
-
-    public List<persona> getProveedores() { return catalogoProveedores.getPersonas();
-    }
+    public List<persona> getClientes() { return catalogoClientes.getPersonas();}
+    public List<persona> getProveedores() { return catalogoProveedores.getPersonas();}
 }

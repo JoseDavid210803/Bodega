@@ -3,10 +3,11 @@ package com.example.bodega.frontend.app.drawer_menu.ver_stock;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SearchView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -18,18 +19,17 @@ import com.example.bodega.backend.clases.Producto;
 
 import com.example.bodega.backend.metodos.MyApplication;
 import com.example.bodega.databinding.FragmentVerStockBinding;
-import com.example.bodega.frontend.acceso.MainActivity;
-import com.example.bodega.frontend.acceso.Principal;
+import com.example.bodega.frontend.detalles.producto.detallesProducto;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VerStockFragment extends Fragment implements SearchView.OnQueryTextListener{
+public class VerStockFragment extends Fragment implements stockElementInterface{
 
     private List<Producto> elements=new ArrayList<>();;
     private View rootView;
     //private SearchView busqueda;
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -38,28 +38,27 @@ public class VerStockFragment extends Fragment implements SearchView.OnQueryText
         MyApplication myApp = (MyApplication) requireContext().getApplicationContext();
         elements = myApp.getInventario().getProductos();
 
-        init();
+        init(this);
         return rootView;
     }
 
-    public void init() {
+    public void init(stockElementInterface listener) {
 
-        Thread thread = new Thread()
-        {
+
+        Thread thread = new Thread() {
             @Override
-            public void run()
-            {
+            public void run() {
                 Context context = requireContext();
-                ListAdapter listAdapter = new ListAdapter(elements, context);
+                ListAdapter listAdapter = new ListAdapter(elements, context, listener);
                 RecyclerView recyclerView = rootView.findViewById(R.id.stock_recyclerview);
                 recyclerView.setHasFixedSize(true);
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
                 recyclerView.setAdapter(listAdapter);
-
                 listAdapter.setItems(elements);
             }
         };
         thread.start();
+
 
     }
 
@@ -73,13 +72,14 @@ public class VerStockFragment extends Fragment implements SearchView.OnQueryText
         }
     }
 
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        return false;
-    }
 
     @Override
-    public boolean onQueryTextChange(String newText) {
-        return false;
+    public void onItemClick(int position) {
+        Toast.makeText(getContext(), "Item " + position + " clicked", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getContext(), detallesProducto.class);
+        int id = elements.get(position).getId();
+        intent.putExtra("id",  id);
+        startActivity(intent);
     }
 }
+

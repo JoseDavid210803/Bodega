@@ -17,14 +17,14 @@ import com.example.bodega.backend.clases.Producto;
 import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
+    private final stockElementInterface stockElementInterface;
     private List<Producto> mData;
     private final LayoutInflater mInflater;
-
-    public ListAdapter(List<Producto> itemList, Context context){
+    public ListAdapter(List<Producto> itemList, Context context, stockElementInterface stockElementInterface){
         this.mInflater=LayoutInflater.from(context);
         this.mData=itemList;
+        this.stockElementInterface=stockElementInterface;
     }
-
     @Override
     public int getItemCount(){return mData.size();}
 
@@ -32,9 +32,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
         View view=mInflater.inflate(R.layout.stock_element, parent, false);
-        return new ViewHolder(view);
+        return new ViewHolder(view, stockElementInterface);
     }
-
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position){
         holder.bindData(mData.get(position));
@@ -46,22 +45,40 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         ImageView iconImage;
         TextView name, cantidad, precio;
 
-        ViewHolder(View itemView){
+        ViewHolder(View itemView, stockElementInterface stockElementInterface){
             super(itemView);
             iconImage=itemView.findViewById(R.id.iconImageView);
             name=itemView.findViewById(R.id.nameTextView);
             cantidad=itemView.findViewById(R.id.cantidadTextView);
             precio=itemView.findViewById(R.id.precioTextView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v)
+                {
+                    if(stockElementInterface!=null){
+                        int position =getAdapterPosition();
+
+                        if(position!=RecyclerView.NO_POSITION)
+                        {
+                            stockElementInterface.onItemClick(position);
+                        }
+                    }
+                }
+
+            }
+            );
         }
 
         void bindData(final Producto item){
             iconImage.setColorFilter(Color.parseColor(item.getColor()), PorterDuff.Mode.SRC_IN);
             name.setText(truncateText(item.getNombre()));
-            cantidad.setText(String.valueOf(item.getCantidad())); // Convertir a String antes de setText
+            cantidad.setText(String.valueOf(item.getCantidad()));
             precio.setText("$" + item.getPrecio());
+
+
         }
 
-        String truncateText(String s)
+        String truncateText(@NonNull String s)
         {
             int max_tamanio=16;
 
